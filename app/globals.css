@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #042718;
+  font-family: "Inter", sans-serif;
+}
+
+.stack-page {
+  position: relative;
+  isolation: isolate;
+}
+
+.stack-panel {
+  --stack-top: 0px;
+  position: sticky;
+  top: var(--stack-top);
+  isolation: isolate;
+  width: 100%;
+  min-height: 100svh;
+}
+
+.stack-panel > * {
+  min-height: 100svh;
+}
+
+.site-content {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  overflow: clip;
+  border-radius: clamp(20px, 2.4vw, 38px) clamp(20px, 2.4vw, 38px) 0 0;
+  box-shadow: 0 -18px 50px rgb(2 23 14 / 18%);
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
