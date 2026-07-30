@@ -331,7 +331,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" as const }}
               className="mt-2 w-full max-w-[900px] text-center font-playfair text-[40px] font-semibold italic leading-none tracking-normal text-white/70 [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:text-[66px] lg:tracking-[-3.566px]"
             >
-              Future Builders
+              Real estate & infrastructure
             </motion.p>
 
             {/* CTA Button */}
@@ -384,26 +384,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 </p>
               </div>
 
-              <div className="w-full mt-4 overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)" } as React.CSSProperties}>
-                <motion.div
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{
-                    duration: 25,
-                    ease: "linear" as const,
-                    repeat: Infinity as number
-                  }}
-                  className="flex items-center gap-12 sm:gap-16 lg:gap-24 w-fit"
-                >
-                  {[...Array(2)].map((_: unknown, i: number) => (
-                    <React.Fragment key={i}>
-                      <img src="https://cdn.jiro.build/Amox/All%20SVG/Horizon.svg" alt="Horizon" className="h-6 sm:h-7 lg:h-9 w-auto hover:opacity-80 transition-opacity" />
-                      <img src="https://cdn.jiro.build/Amox/All%20SVG/Naxus.svg" alt="Naxus" className="h-6 sm:h-7 lg:h-9 w-auto hover:opacity-80 transition-opacity" />
-                      <img src="https://cdn.jiro.build/Amox/All%20SVG/Lumassa.svg" alt="Lumassa" className="h-6 sm:h-7 lg:h-9 w-auto hover:opacity-80 transition-opacity" />
-                      <img src="https://cdn.jiro.build/Amox/All%20SVG/Cyborg.svg" alt="Cyborg" className="h-6 sm:h-7 lg:h-9 w-auto hover:opacity-80 transition-opacity" />
-                      <img src="https://cdn.jiro.build/Amox/All%20SVG/Catalyst.svg" alt="Catalyst" className="h-6 sm:h-7 lg:h-9 w-auto hover:opacity-80 transition-opacity" />
-                    </React.Fragment>
-                  ))}
-                </motion.div>
+              <div className="w-full mt-4 flex justify-center">
+                <span className="font-onest text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-white/80 whitespace-nowrap">
+                  Future Builders
+                </span>
               </div>
             </motion.div>
           </div>
