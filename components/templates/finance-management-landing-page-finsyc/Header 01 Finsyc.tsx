@@ -47,7 +47,13 @@ export default function FinsycOriginalHeader({ className }: { className?: string
     return () => window.clearTimeout(exitTimer);
   }, [isVideoReady]);
 
-  const navItems = ["Home", "About", "Services", "Portfolio", "Partnerships"];
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Partnerships", href: "#partnerships" },
+  ];
 
   return (
     <>
@@ -117,6 +123,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
       </AnimatePresence>
 
       <motion.section
+        id="home"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" as const }}
@@ -164,25 +171,26 @@ export default function FinsycOriginalHeader({ className }: { className?: string
 
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8">
-              {navItems.map((item: string) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.label}>
                   <a
-                    href="#"
+                    href={item.href}
                     className={
                       "font-inter text-base leading-6 tracking-[-0.3px] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.45)] transition-all " +
-                      (item === "Home"
+                      (item.label === "Home"
                         ? "font-bold opacity-100"
                         : "font-normal opacity-80 hover:opacity-100 hover:font-bold")
                     }
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
             </ul>
 
             <div className="flex items-center gap-4">
-              <motion.button
+              <motion.a
+                href="#partnerships"
                 onMouseEnter={() => setIsNavHovered(true)}
                 onMouseLeave={() => setIsNavHovered(false)}
                 layout
@@ -212,7 +220,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                     <ArrowUpRight className="w-3 h-3 text-[#042718]" />
                   </motion.div>
                 </motion.div>
-              </motion.button>
+              </motion.a>
 
               {/* Mobile Menu Toggle */}
               <button
@@ -255,28 +263,32 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 </div>
 
                 <ul className="flex flex-col gap-6">
-                  {navItems.map((item: string, idx: number) => (
+                  {navItems.map((item, idx: number) => (
                     <motion.li
-                      key={item}
+                      key={item.label}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 * idx, ease: "easeOut" as const }}
                     >
                       <a
-                        href="#"
+                        href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="font-inter text-2xl font-semibold text-[#042718]"
                       >
-                        {item}
+                        {item.label}
                       </a>
                     </motion.li>
                   ))}
                 </ul>
 
                 <div className="mt-auto">
-                  <button className="w-full py-4 rounded-full bg-[#A94432] hover:bg-[#923A2B] text-white font-inter font-medium text-lg transition-colors">
+                  <a
+                    href="#partnerships"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block w-full rounded-full bg-[#A94432] py-4 text-center font-inter text-lg font-medium text-white transition-colors hover:bg-[#923A2B]"
+                  >
                     Partner With Us
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             )}
@@ -307,13 +319,9 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" as const }}
-              className="max-w-[750px] w-full text-center font-onest text-[40px] sm:text-[50px] lg:text-[66px] font-semibold leading-tight lg:leading-[72px] tracking-tight lg:tracking-[-3px] text-white [text-shadow:0_3px_24px_rgba(0,0,0,0.55)]"
+              className="w-full max-w-[1180px] text-center font-onest text-[40px] font-semibold leading-[1.05] tracking-tight text-white [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:whitespace-nowrap lg:text-[66px] lg:tracking-[-3px]"
             >
-              Developing Future-Ready{" "}
-              <span className="font-playfair italic font-semibold text-white/70 tracking-normal lg:tracking-[-3.566px]">
-                Real Estate
-              </span>{" "}
-              & Infrastructure
+              Developments Beyond Possibilities
             </motion.h1>
 
             {/* Subheading */}
@@ -321,13 +329,14 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" as const }}
-              className="max-w-[630px] w-full text-center mt-5 font-inter text-lg lg:text-[20px] font-normal leading-relaxed lg:leading-[30px] tracking-[-0.4px] text-white/90 [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]"
+              className="mt-2 w-full max-w-[900px] text-center font-playfair text-[40px] font-semibold italic leading-none tracking-normal text-white/70 [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:text-[66px] lg:tracking-[-3.566px]"
             >
-              Tatweer brings development, engineering, investment, and project management expertise together to deliver integrated, sustainable, and future-proofed cities.
+              Future Builders
             </motion.p>
 
             {/* CTA Button */}
-            <motion.button
+            <motion.a
+              href="#about"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
@@ -360,7 +369,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   <ArrowUpRight className="w-4 h-4 text-[#042718]" />
                 </motion.div>
               </motion.div>
-            </motion.button>
+            </motion.a>
 
             {/* Bottom Branding Section */}
             <motion.div

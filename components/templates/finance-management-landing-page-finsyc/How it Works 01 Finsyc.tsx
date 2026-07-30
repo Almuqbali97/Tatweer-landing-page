@@ -238,7 +238,8 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                     ))}
                   </div>
 
-                  <motion.button
+                  <motion.a
+                    href="#contact"
                     onMouseEnter={() => setIsHoveringBtn(true)}
                     onMouseLeave={() => setIsHoveringBtn(false)}
                     layout
@@ -272,7 +273,7 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                         <ArrowUpRight className="w-4 h-4 text-[#CF573F]" />
                       </motion.div>
                     </motion.div>
-                  </motion.button>
+                  </motion.a>
                 </div>
 
                 <div className="w-full lg:w-[516px] h-[400px] sm:h-[500px] lg:h-[560px] relative rounded-[24px] overflow-hidden bg-[#042718]">

@@ -2,20 +2,22 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Facebook, Twitter, Linkedin, Instagram, Sparkles, ArrowUpRight } from "lucide-react";
+import { Linkedin, Sparkles, ArrowUpRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CTAButtonProps {
   text: string;
+  href: string;
   variant?: 'primary' | 'secondary';
 }
 
-function CTAButton({ text, variant = 'primary' }: CTAButtonProps) {
+function CTAButton({ text, href, variant = 'primary' }: CTAButtonProps) {
   const isPrimary = variant === 'primary';
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <motion.button
+    <motion.a
+      href={href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileTap={{ scale: 0.98 }}
@@ -45,7 +47,7 @@ function CTAButton({ text, variant = 'primary' }: CTAButtonProps) {
       >
         <ArrowUpRight className={cn("w-4 h-4", isPrimary ? "text-[#042718]" : "text-white")} />
       </motion.div>
-    </motion.button>
+    </motion.a>
   );
 }
 
@@ -85,7 +87,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-      <footer className={"relative w-full overflow-hidden flex flex-col items-center " + (className || "")}>
+      <footer id="contact" className={"relative w-full overflow-hidden flex flex-col items-center " + (className || "")}>
         {/* Background Video for the entire footer */}
         <div className="absolute inset-0 z-0">
           {isMounted && (
@@ -109,7 +111,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
         </div>
 
         {/* CTA SECTION */}
-        <section className="w-full relative pt-[120px] pb-0 overflow-hidden flex flex-col items-center">
+        <section id="partnerships" className="w-full relative pt-[120px] pb-0 overflow-hidden flex flex-col items-center">
           {/* Gradient Overlay */}
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
 
@@ -159,8 +161,8 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                 viewport={{ once: true }}
                 className="flex flex-col sm:flex-row items-center gap-4"
               >
-                <CTAButton text="Start a conversation" variant="primary" />
-                <CTAButton text="Explore our services" variant="secondary" />
+                <CTAButton text="Start a conversation" href="#contact-details" variant="primary" />
+                <CTAButton text="Explore our services" href="#services" variant="secondary" />
               </motion.div>
 
             </div>
@@ -181,6 +183,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
 
             {/* Content Row */}
             <motion.div
+              id="contact-details"
               className="w-full lg:w-[1248px] pt-[60px] lg:pt-[120px] pb-[60px] lg:pb-[96px] flex flex-col lg:flex-row items-start gap-[60px] lg:gap-[130px] [text-shadow:0_1px_3px_rgba(0,0,0,0.45)]"
               initial="hidden"
               whileInView="visible"
@@ -203,23 +206,44 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                   Connect with Tatweer to explore project alliances that create sustainable value for every party.
                 </motion.p>
 
-                {/* Subscribe Box */}
-                <motion.div
+                <motion.a
                   variants={itemVariants}
-                  className="mt-2 relative w-full lg:w-[440px] flex flex-col sm:flex-row items-stretch sm:items-center p-3 sm:p-[6px] gap-3 sm:gap-0 rounded-[28px] sm:rounded-full border border-white/60 bg-[#02170e]/35 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.18)]"
+                  href="https://maps.app.goo.gl/nuvFvhgdHnq4WVsaA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 rounded-[22px] border border-white/35 bg-[#02170e]/30 p-4 text-white backdrop-blur-xl transition-colors hover:bg-[#02170e]/45"
+                  aria-label="Open Future Builders office location in Google Maps"
                 >
-                  <input
-                    type="email"
-                    placeholder="Enter your work email"
-                    className="flex-1 bg-transparent border-none outline-none px-4 py-2 sm:py-0 font-sans text-[18px] text-white placeholder:text-white/65 [text-shadow:none]"
-                  />
-                  <button className="flex items-center justify-between sm:justify-start gap-3 bg-white pl-6 pr-2 py-2 sm:pl-[24px] sm:pr-[8px] sm:py-[8px] rounded-full shadow-sm hover:shadow-md transition-all duration-300 group">
-                    <span className="font-sans text-[18px] font-medium text-[#042718]">Connect</span>
-                    <div className="w-[36px] h-[36px] bg-[#A94432] group-hover:bg-[#923A2B] rounded-full flex items-center justify-center transition-colors duration-300 shrink-0">
-                      <ArrowRight size={18} strokeWidth={2.5} className="text-white" />
-                    </div>
-                  </button>
-                </motion.div>
+                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#A94432]">
+                    <MapPin className="h-5 w-5" />
+                  </span>
+                  <span className="font-sans text-[15px] leading-6 text-white/85">
+                    <strong className="block text-base font-semibold text-white">
+                      Company Address
+                    </strong>
+                    Al Qurum Gardens Building — Front Building Gate
+                    <br />
+                    Penthouse · Future Builders Office 55
+                    <span className="mt-1 block font-medium text-white underline decoration-white/40 underline-offset-4 group-hover:decoration-white">
+                      View on Google Maps
+                    </span>
+                  </span>
+                </motion.a>
+
+                <motion.a
+                  variants={itemVariants}
+                  href="https://www.linkedin.com/company/tatweer-limited"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-2 flex w-full items-center justify-between gap-3 rounded-full border border-white/60 bg-[#02170e]/35 p-[6px] pl-6 shadow-[0_4px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-colors hover:bg-[#02170e]/50 lg:w-[440px]"
+                >
+                  <span className="font-sans text-[17px] font-medium text-white">
+                    Connect with us on LinkedIn
+                  </span>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#042718] transition-transform group-hover:rotate-[-8deg]">
+                    <ArrowUpRight size={18} strokeWidth={2.5} />
+                  </span>
+                </motion.a>
               </div>
 
               {/* Right Column (Link Lists) */}
@@ -234,7 +258,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                   <ul className="flex flex-col gap-[16px]">
                     {["Development", "Project Management", "Engineering", "Asset Management"].map((link: string) => (
                       <motion.li key={link} variants={itemVariants}>
-                        <a href="#" className="text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all">{link}</a>
+                        <a href="#services" className="text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all">{link}</a>
                       </motion.li>
                     ))}
                   </ul>
@@ -249,9 +273,14 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                     style={{ fontFamily: "'Onest', sans-serif" }}
                   >Company</motion.h4>
                   <ul className="flex flex-col gap-[16px]">
-                    {["About us", "Portfolio", "Partnerships", "Contact"].map((link: string) => (
-                      <motion.li key={link} variants={itemVariants}>
-                        <a href="#" className="text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all">{link}</a>
+                    {[
+                      { label: "About us", href: "#about" },
+                      { label: "Portfolio", href: "#portfolio" },
+                      { label: "Partnerships", href: "#partnerships" },
+                      { label: "Contact", href: "#contact-details" },
+                    ].map((link) => (
+                      <motion.li key={link.label} variants={itemVariants}>
+                        <a href={link.href} className="text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all">{link.label}</a>
                       </motion.li>
                     ))}
                   </ul>
@@ -266,39 +295,37 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                     style={{ fontFamily: "'Onest', sans-serif" }}
                   >Social</motion.h4>
                   <ul className="flex flex-col gap-[16px]">
-                    {[
-                      { name: "Facebook", icon: Facebook },
-                      { name: "Twitter", icon: Twitter },
-                      { name: "Linkedin", icon: Linkedin },
-                      { name: "Instagram", icon: Instagram }
-                    ].map((social: { name: string; icon: React.ElementType }) => (
-                      <motion.li key={social.name} variants={itemVariants}>
-                        <a href="#" className="flex items-center gap-3 text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all">
-                          <social.icon size={18} fill="currentColor" strokeWidth={0} className="opacity-100" />
-                          {social.name}
-                        </a>
-                      </motion.li>
-                    ))}
+                    <motion.li variants={itemVariants}>
+                      <a
+                        href="https://www.linkedin.com/company/tatweer-limited"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-white/80 font-sans text-[18px] font-normal leading-[28px] hover:text-white hover:font-medium transition-all"
+                      >
+                        <Linkedin size={18} fill="currentColor" strokeWidth={0} />
+                        LinkedIn
+                      </a>
+                    </motion.li>
                   </ul>
                 </div>
               </div>
             </motion.div>
 
             {/* Tatweer brand lockup */}
-            <div className="w-full min-h-[120px] md:min-h-[250px] lg:min-h-[430px] flex justify-center items-center select-none">
+            <div className="flex min-h-[130px] w-full select-none items-center justify-center md:min-h-[250px] lg:min-h-[430px]">
               <motion.div
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: [0.21, 0.45, 0.32, 0.9] as const }}
-                className="flex items-center justify-center gap-3 md:gap-6 lg:gap-10"
+                className="flex w-full items-center justify-center gap-2 px-1 sm:gap-3 md:gap-6 lg:gap-10"
               >
                 <img
                   src="/logo.png"
                   alt=""
-                  className="h-[58px] md:h-[118px] lg:h-[190px] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
+                  className="h-[clamp(44px,13vw,58px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:h-[118px] lg:h-[190px]"
                 />
-                <span className="font-[Georgia,serif] text-[#F4E7D4] text-[52px] md:text-[112px] lg:text-[188px] font-bold leading-none tracking-[0.02em] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)]">
+                <span className="font-[Georgia,serif] text-[clamp(40px,13vw,52px)] font-bold leading-none tracking-[0.01em] text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:text-[112px] md:tracking-[0.02em] lg:text-[188px]">
                   TATWEER
                 </span>
               </motion.div>
@@ -306,23 +333,30 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
 
             {/* Bottom Text Row */}
             <motion.div
-              className="w-full lg:w-[1248px] mt-[24px] pt-8 flex flex-col lg:flex-row items-center justify-between gap-6"
+              className="mt-6 flex w-full flex-col items-center gap-5 rounded-[24px] border border-white/15 bg-black/15 p-4 font-sans text-white backdrop-blur-sm lg:w-[1248px] lg:flex-row lg:justify-between lg:rounded-none lg:border-x-0 lg:border-b-0 lg:bg-transparent lg:px-0 lg:py-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="flex items-center gap-8 text-white font-sans text-[18px] font-normal leading-[28px] opacity-80">
-                <a href="#" className="hover:opacity-100 hover:font-medium transition-all">Terms & Conditions</a>
-                <a href="#" className="hover:opacity-100 hover:font-medium transition-all">Privacy Policy</a>
+              <div className="grid w-full max-w-[380px] grid-cols-2 overflow-hidden rounded-full border border-white/15 bg-white/[0.06] text-center text-[13px] font-medium leading-5 text-white/75 lg:order-1 lg:flex lg:w-auto lg:max-w-none lg:gap-8 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:text-left lg:text-[18px] lg:leading-7">
+                <span className="border-r border-white/15 px-3 py-2.5 lg:border-0 lg:p-0">Terms & Conditions</span>
+                <span className="px-3 py-2.5 lg:p-0">Privacy Policy</span>
               </div>
 
-              <div className="text-white font-sans text-[18px] font-normal leading-[28px] opacity-80 text-center lg:text-left">
+              <div className="order-3 border-t border-white/10 pt-4 text-center text-[13px] font-normal leading-5 text-white/60 lg:order-2 lg:border-0 lg:p-0 lg:text-left lg:text-[18px] lg:leading-7 lg:text-white/80">
                 &copy; 2026 Tatweer Limited SPC. All rights reserved.
               </div>
 
-              <div className="text-white font-sans text-[18px] font-normal leading-[28px] opacity-80">
-                Real-Estate Development &bull; Investment &bull; PMO
+              <div className="order-2 flex flex-wrap items-center justify-center gap-2 lg:order-3 lg:flex-nowrap">
+                {["Real-Estate Development", "Investment", "PMO"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.06em] text-white/70 lg:border-0 lg:bg-transparent lg:p-0 lg:text-[18px] lg:font-normal lg:normal-case lg:tracking-normal lg:text-white/80"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </motion.div>
 

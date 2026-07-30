@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  overscroll-behavior-y: none;
   background: #ffffff;
   color: #042718;
   font-family: "Inter", sans-serif;
@@ -48,4 +49,10 @@ button,
 a,
 input {
   -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -48,6 +48,7 @@ export default function MetricsWithLogo01Finsyc({ className }: { className?: str
   return (
     <>
       <section
+        id="about"
         className={"w-full bg-[#F6FDFF] py-20 lg:py-32 flex justify-center " + (className || "")}
       >
         <div className="w-full max-w-[1440px] px-6 lg:px-[96px]">
@@ -64,7 +65,8 @@ export default function MetricsWithLogo01Finsyc({ className }: { className?: str
                 Proven capability across development, delivery, and <i className="text-[rgba(0,0,0,0.40)]">investment</i>
               </motion.h1>
 
-              <motion.button
+              <motion.a
+                href="#partnerships"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 initial={{ opacity: 0, x: 30 }}
@@ -99,7 +101,7 @@ export default function MetricsWithLogo01Finsyc({ className }: { className?: str
                 >
                   <ArrowUpRight className="w-[16px] h-[16px] text-[#042718]" />
                 </motion.div>
-              </motion.button>
+              </motion.a>
             </div>
 
             {/* Cards Grid */}
@@ -115,7 +117,7 @@ export default function MetricsWithLogo01Finsyc({ className }: { className?: str
                 delay={0.2}
                 bgColor="#EBE3D2"
                 icon={Target}
-                title="40+ Years Experience"
+                title="15+ Years of Experience"
                 description="An entrepreneurial spirit backed by decades of combined expertise across the GCC real estate sector."
               />
               <FeatureCard

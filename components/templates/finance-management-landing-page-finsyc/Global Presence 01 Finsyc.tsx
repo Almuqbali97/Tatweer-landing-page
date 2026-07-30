@@ -9,40 +9,44 @@ import {
 
 const locations = [
   {
-    name: "New York",
-    position: "left-[29%] top-[39%]",
+    name: "UK",
+    position: "left-[46.2%] top-[23.1%]",
     labelPosition: "right-5 top-1/2 -translate-y-1/2",
   },
   {
-    name: "London",
-    position: "left-[49%] top-[34%]",
+    name: "UAE",
+    position: "left-[59.4%] top-[38.1%]",
     labelPosition: "bottom-5 left-1/2 -translate-x-1/2",
   },
   {
-    name: "Riyadh",
-    position: "left-[62%] top-[50%]",
-    labelPosition: "right-5 top-1",
+    name: "Egypt",
+    position: "left-[54.9%] top-[36.9%]",
+    labelPosition: "right-5 top-1/2 -translate-y-1/2",
   },
   {
-    name: "Doha",
-    position: "left-[64%] top-[46%]",
-    labelPosition: "right-5 bottom-1",
+    name: "Italy",
+    position: "left-[50%] top-[29.6%]",
+    labelPosition: "bottom-5 left-1/2 -translate-x-1/2",
   },
   {
-    name: "Muscat",
-    position: "left-[67%] top-[53%]",
-    labelPosition: "left-5 top-2",
-    primary: true,
+    name: "Russia",
+    position: "left-[59.4%] top-[21.5%]",
+    labelPosition: "left-5 top-1/2 -translate-y-1/2",
   },
   {
-    name: "Dubai",
-    position: "left-[66%] top-[49%]",
-    labelPosition: "left-5 bottom-1",
+    name: "Saudi Arabia",
+    position: "left-[57.4%] top-[37%]",
+    labelPosition: "top-5 left-1/2 -translate-x-1/2",
   },
   {
-    name: "Bengaluru",
-    position: "left-[72%] top-[61%]",
-    labelPosition: "left-5 top-1",
+    name: "India",
+    position: "left-[67.9%] top-[38.6%]",
+    labelPosition: "bottom-5 left-1/2 -translate-x-1/2",
+  },
+  {
+    name: "Vietnam",
+    position: "left-[75.6%] top-[42.2%]",
+    labelPosition: "left-5 top-1/2 -translate-y-1/2",
   },
 ];
 
@@ -90,8 +94,8 @@ export default function GlobalPresence01Finsyc({
 
               <p className="mt-6 max-w-[520px] font-inter text-base leading-7 text-[#042718]/75 sm:text-lg">
                 From our base in Oman, Tatweer connects regional delivery
-                expertise with an international network spanning established
-                financial centres and fast-growing development markets.
+                expertise with an international network spanning the UK, UAE,
+                Egypt, Italy, Russia, Saudi Arabia, India, and Vietnam.
               </p>
 
               <div className="mt-9 flex items-start gap-4 rounded-[22px] border border-[#042718]/10 bg-white/70 p-5 backdrop-blur-sm">
@@ -116,7 +120,7 @@ export default function GlobalPresence01Finsyc({
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               className="relative mx-auto aspect-[1.55/1] w-full max-w-[880px] bg-transparent"
-              aria-label="Tatweer global network locations"
+              aria-label="Tatweer global network across the UK, UAE, Egypt, Italy, Russia, Saudi Arabia, India, and Vietnam"
             >
               <div className="absolute inset-0 bg-transparent">
                 <img
@@ -136,15 +140,9 @@ export default function GlobalPresence01Finsyc({
                     className={`absolute z-10 ${location.position}`}
                   >
                     <div
-                      className={`relative h-3 w-3 rounded-full border-2 border-white shadow-[0_2px_10px_rgba(4,39,24,0.28)] ${
-                        location.primary ? "bg-[#A94432]" : "bg-[#138E5F]"
-                      }`}
+                      className="relative h-3 w-3 rounded-full border-2 border-white bg-[#138E5F] shadow-[0_2px_10px_rgba(4,39,24,0.28)]"
                     >
-                      <span
-                        className={`absolute inset-0 animate-ping rounded-full opacity-25 ${
-                          location.primary ? "bg-[#A94432]" : "bg-[#138E5F]"
-                        }`}
-                      />
+                      <span className="absolute inset-0 animate-ping rounded-full bg-[#138E5F] opacity-25" />
                     </div>
                     <span
                       className={`absolute whitespace-nowrap rounded-full border border-[#042718]/10 bg-white/95 px-2.5 py-1 font-inter text-[9px] font-semibold uppercase tracking-[0.08em] text-[#042718] shadow-sm sm:text-[11px] ${location.labelPosition}`}

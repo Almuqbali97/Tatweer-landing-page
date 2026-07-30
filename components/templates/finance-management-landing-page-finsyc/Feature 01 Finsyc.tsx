@@ -9,6 +9,7 @@ interface Project {
   description: string;
   location: string;
   category: string;
+  status: string;
   uiSrc: string;
 }
 
@@ -42,7 +43,8 @@ function MobileProjectCard({
         <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
           <div className="mb-3 flex items-center">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
-              {String(index + 1).padStart(2, "0")} · {project.category}
+              {String(index + 1).padStart(2, "0")} · {project.status} ·{" "}
+              {project.category}
             </span>
           </div>
           <h3 className="font-onest text-2xl font-semibold tracking-[-0.7px] sm:text-[30px]">
@@ -114,6 +116,8 @@ function ExpandingProjectCard({
           }`}
         >
           <div className="mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.17em] text-white/70">
+            <span>{project.status}</span>
+            <span className="h-1 w-1 rounded-full bg-white/45" />
             <span>{project.category}</span>
             <span className="h-1 w-1 rounded-full bg-white/45" />
             <span>{project.location}</span>
@@ -153,36 +157,67 @@ export default function OriginaFinsycFeature({
 
   const projects: Project[] = [
     {
-      title: "Muscat Hills Boulevard",
-      description:
-        "Development experience at Muscat Hills, including work connected to a landmark commercial building and 10 mansions.",
-      location: "Muscat, Oman",
-      category: "Real estate",
-      uiSrc: "/portfolio/muscat-hills.png",
-    },
-    {
       title: "Al Daymaniyat Island Qisma",
       description:
         "A mixed-use island development shaped by the ambition to create responsibly within a UNESCO-protected setting.",
       location: "Oman",
       category: "Island development",
+      status: "Flagship project",
       uiSrc: "/portfolio/al-daymaniyat-island-qisma.png",
     },
     {
-      title: "Sultan Haitham City",
+      title: "18 November",
       description:
-        "Project-management leadership across 14 million square metres, structured in four phases through detailed design.",
-      location: "Oman",
-      category: "Master planning",
-      uiSrc: "/portfolio/sultan-haitham-city.png",
+        "A refined mixed-use destination bringing hospitality, retail, dining, and a generous public realm into one walkable address.",
+      location: "Muscat, Oman",
+      category: "Mixed-use destination",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/18-november-upcoming-project.png",
     },
     {
-      title: "Wadi Kabeer Industrial City",
+      title: "Boushar",
       description:
-        "Project-management leadership for a 3 million square metre industrial development across two phases through detailed design.",
+        "A contemporary, landscape-led neighbourhood where homes, shaded promenades, water, and daily amenities come together.",
+      location: "Boushar, Oman",
+      category: "Urban community",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/boushar-upcoming-project.png",
+    },
+    {
+      title: "Development Island",
+      description:
+        "A secluded coastal retreat envisioned around sculptural villas, dramatic terrain, and uninterrupted sea views.",
+      location: "Oman",
+      category: "Island retreat",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/development-island-upcoming-project.png",
+    },
+    {
+      title: "European Destination",
+      description:
+        "A European-inspired lifestyle quarter pairing intimate retail streets, alfresco dining, residences, and warm hospitality.",
+      location: "Oman",
+      category: "Lifestyle destination",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/european-destination-upcoming-project.png",
+    },
+    {
+      title: "InTown",
+      description:
+        "A design-led in-town address defined by fluid architecture, lush terraces, and a welcoming street-level experience.",
       location: "Muscat, Oman",
-      category: "Industrial",
-      uiSrc: "/portfolio/wadi-kabeer-industrial-city.png",
+      category: "Urban destination",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/intown-upcoming-project.png",
+    },
+    {
+      title: "Waterfront",
+      description:
+        "A marina-centred waterfront community shaped around residences, hospitality, promenades, dining, and life on the water.",
+      location: "Oman",
+      category: "Waterfront community",
+      status: "Upcoming project",
+      uiSrc: "/portfolio/waterfront-upcoming-project.png",
     },
   ];
 
@@ -201,6 +236,7 @@ export default function OriginaFinsycFeature({
       />
 
       <section
+        id="portfolio"
         className={`w-full overflow-clip bg-white py-20 lg:py-32 ${
           className || ""
         }`}
@@ -228,11 +264,9 @@ export default function OriginaFinsycFeature({
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="mt-6 w-full max-w-[686px] text-center font-onest text-[32px] font-semibold leading-tight tracking-[-1.2px] text-[#042718] sm:text-[40px] sm:tracking-[-1.8px] lg:text-[52px] lg:leading-[58px]"
               >
-                Projects shaping cities,
-                <br className="block sm:hidden" />
-                {" industry, and "}
+                Shaping the future of{" "}
                 <span className="font-playfair font-semibold italic text-black/40">
-                  islands
+                  cities lifestyle
                 </span>
               </motion.h2>
 
@@ -243,8 +277,8 @@ export default function OriginaFinsycFeature({
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mt-3 w-full max-w-[560px] text-center font-inter text-base font-normal leading-relaxed text-[#042718] opacity-80 sm:text-lg sm:leading-7"
               >
-                Representative developments from Tatweer’s real-estate and
-                project-management portfolio in Oman.
+                Al Daymaniyat Island Qisma and a first look at six destinations
+                coming next.
               </motion.p>
             </div>
 

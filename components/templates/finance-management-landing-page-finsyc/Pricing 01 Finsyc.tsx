@@ -98,36 +98,37 @@ function PricingCard({
                 type="video/mp4"
               />
             </video>
-            <div className="absolute inset-0 bg-[#CF573F]/10 backdrop-blur-[4px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#02170e]/75 via-[#02170e]/65 to-[#02170e]/80 backdrop-blur-[5px]" />
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="relative z-10 w-full flex flex-col">
         <div className="flex flex-col gap-[6px]">
-          <h3 className="text-[#042718] font-onest text-[28px] font-semibold leading-[34px] tracking-[-0.8px]">
+          <h3 className={"font-onest text-[28px] font-semibold leading-[34px] tracking-[-0.8px] transition-colors duration-300 " + (isVisualActive ? "text-white" : "text-[#042718]")}>
             {plan.name}
           </h3>
-          <p className="text-[#042718] font-inter text-[16px] font-normal leading-[24px] tracking-[-0.3px] opacity-80">
+          <p className={"font-inter text-[16px] font-normal leading-[24px] tracking-[-0.3px] transition-colors duration-300 " + (isVisualActive ? "text-white/80" : "text-[#042718]/80")}>
             {plan.description}
           </p>
         </div>
 
-        <div className={"mt-[16px] border-t w-full transition-colors duration-300 " + (isVisualActive ? "border-[#042718]/20" : "border-[#042718]/08")} />
+        <div className={"mt-[16px] border-t w-full transition-colors duration-300 " + (isVisualActive ? "border-white/25" : "border-[#042718]/08")} />
 
         <div className="mt-[16px] flex flex-col">
           <div className="flex items-baseline">
-            <span className="text-[#042718] font-onest text-[56px] font-semibold leading-[64px] tracking-[-2px]">
+            <span className={"font-onest text-[56px] font-semibold leading-[64px] tracking-[-2px] transition-colors duration-300 " + (isVisualActive ? "text-white" : "text-[#042718]")}>
               {plan.index}
             </span>
           </div>
-          <p className="mt-[16px] text-[#042718] font-inter text-[18px] font-normal leading-[28px] tracking-[-0.3px] opacity-80">
+          <p className={"mt-[16px] font-inter text-[18px] font-normal leading-[28px] tracking-[-0.3px] transition-colors duration-300 " + (isVisualActive ? "text-white/75" : "text-[#042718]/80")}>
             Engagement model
           </p>
         </div>
 
-        <button
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+        <a
+          href="#contact"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
             e.stopPropagation();
             onClick();
           }}
@@ -151,7 +152,7 @@ function PricingCard({
               className={"transition-colors duration-300 " + (isBtnHovered || isVisualActive ? "text-[#042718]" : "text-white")}
             />
           </motion.div>
-        </button>
+        </a>
 
         <div className="mt-[24px] flex flex-col">
           <p
