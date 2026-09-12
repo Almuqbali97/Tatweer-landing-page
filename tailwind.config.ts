@@ -14,6 +14,15 @@ const config: Config = {
         onest: ["Onest", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
       },
+      keyframes: {
+        "logo-marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        "logo-marquee": "logo-marquee 28s linear infinite",
+      },
     },
   },
   plugins: [],

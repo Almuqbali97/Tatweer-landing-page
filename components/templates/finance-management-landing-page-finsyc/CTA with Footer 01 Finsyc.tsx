@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Sparkles, ArrowUpRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import BrandWordmark from "@/components/BrandWordmark";
 
 interface CTAButtonProps {
   text: string;
@@ -325,9 +326,10 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                   alt=""
                   className="h-[clamp(44px,13vw,58px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:h-[118px] lg:h-[190px]"
                 />
-                <span className="font-[Georgia,serif] text-[clamp(40px,13vw,52px)] font-bold leading-none tracking-[0.01em] text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:text-[112px] md:tracking-[0.02em] lg:text-[188px]">
-                  TATWEER
-                </span>
+                <BrandWordmark
+                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[clamp(40px,13vw,52px)] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:text-[112px] lg:text-[188px]"
+                  englishClassName="mt-2 font-[Georgia,serif] text-[clamp(40px,13vw,52px)] font-bold leading-none tracking-[0.01em] text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:mt-3 md:text-[112px] md:tracking-[0.02em] lg:mt-4 lg:text-[188px]"
+                />
               </motion.div>
             </div>
 

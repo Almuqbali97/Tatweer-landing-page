@@ -3,6 +3,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Sparkles, Menu, X } from "lucide-react";
+import BrandWordmark from "@/components/BrandWordmark";
+
+const futureBuildersClients = [
+  { src: "/clients-logos/aces-removebg-preview.png", alt: "ACES" },
+  { src: "/clients-logos/bank-muscat-removebg-preview.png", alt: "Bank Muscat" },
+  { src: "/clients-logos/dubai-gov-removebg-preview.png", alt: "Government of Dubai" },
+  { src: "/clients-logos/dusit-thani-removebg-preview.png", alt: "Dusit Thani Hotels & Resorts" },
+  { src: "/clients-logos/kempinski-removebg-preview.png", alt: "Kempinski Hotel Muscat" },
+  { src: "/clients-logos/oman-airport-managment-company-removebg-preview.png", alt: "Oman Airports Management Company" },
+  { src: "/clients-logos/oman-airports-removebg-preview.png", alt: "Oman Airports" },
+  { src: "/clients-logos/ominfest-removebg-preview.png", alt: "Ominvest" },
+  { src: "/clients-logos/schon-removebg-preview.png", alt: "Schön Properties" },
+  { src: "/clients-logos/sky-holdings-removebg-preview.png", alt: "Sky Holding" },
+  { src: "/clients-logos/sudir-princess-removebg-preview.png", alt: "Dusit Princess ACES Dubai" },
+] as const;
 
 export default function FinsycOriginalHeader({ className }: { className?: string }) {
   const [isNavHovered, setIsNavHovered] = useState(false);
@@ -93,9 +108,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   alt=""
                   className="h-14 w-auto drop-shadow-[0_3px_14px_rgba(0,0,0,0.25)] sm:h-[72px]"
                 />
-                <span className="font-[Georgia,serif] text-[34px] font-bold leading-none tracking-[0.04em] text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]">
-                  TATWEER
-                </span>
+                <BrandWordmark
+                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[34px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
+                  englishClassName="mt-1.5 font-[Georgia,serif] text-[34px] font-bold leading-none tracking-[0.04em] text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
+                />
               </div>
 
               <div className="mt-8 h-px w-full overflow-hidden bg-white/15">
@@ -142,7 +158,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               className="w-full h-full object-cover"
             >
               <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260728_220144_6964d811-e0df-4c32-8171-2e83eb6f5f3d.mp4"
+                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260912_212147_dd3d2589-edc4-4446-97e5-d1e97bbbe925.mp4"
                 type="video/mp4"
               />
             </video>
@@ -164,9 +180,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 alt=""
                 className="h-10 lg:h-11 w-auto"
               />
-              <span className="font-[Georgia,serif] text-[23px] lg:text-[27px] font-bold tracking-[0.02em] text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)]">
-                TATWEER
-              </span>
+              <BrandWordmark
+                arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[22px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
+                englishClassName="mt-0.5 font-[Georgia,serif] text-[22px] font-bold leading-none tracking-[0.02em] text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
+              />
             </a>
 
             {/* Desktop Menu */}
@@ -250,9 +267,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                       alt=""
                       className="h-11 w-auto"
                     />
-                    <span className="font-[Georgia,serif] text-[25px] font-bold tracking-[0.02em] text-[#4B3028]">
-                      TATWEER
-                    </span>
+                    <BrandWordmark
+                      arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[25px] font-bold leading-none text-[#4B3028]"
+                      englishClassName="mt-1 font-[Georgia,serif] text-[25px] font-bold leading-none tracking-[0.02em] text-[#4B3028]"
+                    />
                   </a>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -376,7 +394,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 1, ease: "easeOut" as const }}
-              className="mt-20 lg:mt-[220px] flex flex-col items-center gap-10 w-full"
+              className="mt-14 lg:mt-[96px] flex flex-col items-center gap-8 w-full"
             >
               <div className="px-[16px] py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/20">
                 <p className="font-inter text-sm lg:text-base font-medium leading-6 tracking-[-0.3px] text-white text-center">
@@ -384,10 +402,46 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 </p>
               </div>
 
-              <div className="w-full mt-4 flex justify-center">
-                <span className="font-onest text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-white/80 whitespace-nowrap">
-                  Future Builders
-                </span>
+              <div className="mt-4 flex w-full flex-col items-center gap-6">
+                <div className="flex items-center justify-center gap-3 sm:gap-5">
+                  <BrandWordmark
+                    arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[18px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-[22px] lg:text-[26px]"
+                    englishClassName="mt-0.5 font-[Georgia,serif] text-[18px] font-bold leading-none tracking-[0.02em] text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-[22px] lg:text-[26px]"
+                  />
+                  <img
+                    src="/future-builders-logo.png"
+                    alt="Future Builders"
+                    className="h-7 w-auto brightness-0 invert sm:h-8 lg:h-10"
+                  />
+                </div>
+
+                <div
+                  className="client-logo-mask relative w-full overflow-hidden"
+                  aria-label="Future Builders clients"
+                >
+                  <div className="flex w-max animate-logo-marquee py-1">
+                    {[0, 1].map((copy) => (
+                      <div
+                        key={copy}
+                        className="flex shrink-0 gap-3 pr-3 sm:gap-4 sm:pr-4"
+                        aria-hidden={copy === 1}
+                      >
+                        {futureBuildersClients.map((client) => (
+                          <div
+                            key={`${copy}-${client.src}`}
+                            className="flex h-[68px] w-[140px] shrink-0 items-center justify-center px-3 sm:h-[76px] sm:w-[156px]"
+                          >
+                            <img
+                              src={client.src}
+                              alt={copy === 0 ? client.alt : ""}
+                              className="max-h-12 max-w-full object-contain brightness-0 invert sm:max-h-14"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
