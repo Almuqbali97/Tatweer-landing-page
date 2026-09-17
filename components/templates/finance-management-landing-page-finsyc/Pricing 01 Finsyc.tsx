@@ -13,7 +13,7 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
   {
-    name: "Development Advisory",
+    name: "Development opportunities",
     description: "Define viable, investable, and sustainable development opportunities.",
     index: "01",
     features: [

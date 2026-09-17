@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   applicationName: "Tatweer Limited",
@@ -59,7 +60,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SmoothScroll />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

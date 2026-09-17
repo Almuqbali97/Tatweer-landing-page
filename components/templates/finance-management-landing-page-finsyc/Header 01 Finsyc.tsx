@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Sparkles, Menu, X } from "lucide-react";
 import BrandWordmark from "@/components/BrandWordmark";
+import Link from "next/link";
+import { usePageTransition } from "@/components/PageTransition";
 
 const futureBuildersClients = [
   { src: "/clients-logos/aces-removebg-preview.png", alt: "ACES" },
@@ -19,13 +21,22 @@ const futureBuildersClients = [
   { src: "/clients-logos/sudir-princess-removebg-preview.png", alt: "Dusit Princess ACES Dubai" },
 ] as const;
 
-export default function FinsycOriginalHeader({ className }: { className?: string }) {
+export default function FinsycOriginalHeader({
+  className,
+  minimal = false,
+  skipLoadingCover = false,
+}: {
+  className?: string;
+  minimal?: boolean;
+  skipLoadingCover?: boolean;
+}) {
   const [isNavHovered, setIsNavHovered] = useState(false);
   const [isCTAHovered, setIsCTAHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
-  const [showLoadingCover, setShowLoadingCover] = useState(true);
+  const [showLoadingCover, setShowLoadingCover] = useState(!skipLoadingCover);
+  const navigateToPortfolio = usePageTransition();
   const coverStartedAt = React.useRef(Date.now());
 
   useEffect(() => {
@@ -64,10 +75,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
 
   const navItems = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Partnerships", href: "#partnerships" },
+    { label: "About", href: minimal ? "/company-portfolio#about" : "#about" },
+    { label: "Services", href: minimal ? "/company-portfolio#services" : "#services" },
+    { label: "Portfolio", href: minimal ? "/company-portfolio#portfolio" : "#portfolio" },
+    { label: "Partnerships", href: minimal ? "/company-portfolio#partnerships" : "#partnerships" },
   ];
 
   return (
@@ -103,14 +114,14 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               aria-label="Loading Tatweer"
             >
               <div className="flex items-center justify-center gap-4 sm:gap-5">
+                <BrandWordmark
+                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[34px] font-bold leading-none text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
+                  englishClassName="mt-1.5 font-[Georgia,serif] text-[34px] font-bold leading-none tracking-[0.04em] text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
+                />
                 <img
                   src="/logo-new.png"
                   alt=""
                   className="h-14 w-auto drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:h-[72px]"
-                />
-                <BrandWordmark
-                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[34px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
-                  englishClassName="mt-1.5 font-[Georgia,serif] text-[34px] font-bold leading-none tracking-[0.04em] text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
                 />
               </div>
 
@@ -143,7 +154,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" as const }}
-        className={"relative w-full overflow-hidden min-h-[800px] lg:min-h-[900px] " + (className || "")}
+        className={"relative w-full overflow-hidden " + (minimal ? "min-h-[100svh] " : "min-h-[800px] lg:min-h-[900px] ") + (className || "")}
       >
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
@@ -166,7 +177,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-black/55" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-12">
+        <div className={"relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-12 " + (minimal ? "flex min-h-[100svh] flex-col" : "")}>
           {/* Navigation */}
           <motion.nav
             initial={{ y: -20, opacity: 0 }}
@@ -175,19 +186,19 @@ export default function FinsycOriginalHeader({ className }: { className?: string
             className="flex items-center justify-between"
           >
             <a href="/" aria-label="Tatweer home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <BrandWordmark
+                arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[22px] font-bold leading-none text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
+                englishClassName="mt-0.5 font-[Georgia,serif] text-[22px] font-bold leading-none tracking-[0.02em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
+              />
               <img
                 src="/logo-new.png"
                 alt=""
                 className="h-10 lg:h-11 w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.7)]"
               />
-              <BrandWordmark
-                arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[22px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
-                englishClassName="mt-0.5 font-[Georgia,serif] text-[22px] font-bold leading-none tracking-[0.02em] text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
-              />
             </a>
 
             {/* Desktop Menu */}
-            <ul className="hidden lg:flex items-center gap-8">
+            {!minimal && <ul className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <a
@@ -203,10 +214,10 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul>}
 
             <div className="flex items-center gap-4">
-              <motion.a
+              {!minimal && <motion.a
                 href="#partnerships"
                 onMouseEnter={() => setIsNavHovered(true)}
                 onMouseLeave={() => setIsNavHovered(false)}
@@ -237,15 +248,16 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                     <ArrowUpRight className="w-3 h-3 text-[#042718]" />
                   </motion.div>
                 </motion.div>
-              </motion.a>
+              </motion.a>}
 
               {/* Mobile Menu Toggle */}
-              <button
+              {!minimal && <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Open navigation menu"
                 className="lg:hidden p-2 text-white bg-black/20 border border-white/30 backdrop-blur-md rounded-full"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+              </button>}
             </div>
           </motion.nav>
 
@@ -262,14 +274,14 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               >
                 <div className="flex items-center justify-between">
                   <a href="/" aria-label="Tatweer home" className="flex items-center gap-3">
+                    <BrandWordmark
+                      arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[25px] font-bold leading-none text-black"
+                      englishClassName="mt-1 font-[Georgia,serif] text-[25px] font-bold leading-none tracking-[0.02em] text-black"
+                    />
                     <img
                       src="/logo-new.png"
                       alt=""
                       className="h-11 w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.7)]"
-                    />
-                    <BrandWordmark
-                      arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[25px] font-bold leading-none text-[#4B3028]"
-                      englishClassName="mt-1 font-[Georgia,serif] text-[25px] font-bold leading-none tracking-[0.02em] text-[#4B3028]"
                     />
                   </a>
                   <button
@@ -299,7 +311,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   ))}
                 </ul>
 
-                <div className="mt-auto">
+                {!minimal && <div className="mt-auto">
                   <a
                     href="#partnerships"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -307,57 +319,60 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   >
                     Partner With Us
                   </a>
-                </div>
+                </div>}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Hero Content */}
-          <div className="flex flex-col items-center mt-12 lg:mt-[80px]">
+          <div className={minimal ? "mt-auto flex items-end justify-end" : "flex flex-col items-center mt-12 lg:mt-[80px]"}>
             {/* Heading */}
-            <motion.h1
+            {!minimal && <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" as const }}
               className="w-full max-w-[1180px] text-center font-onest text-[40px] font-semibold leading-[1.05] tracking-tight text-white [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:whitespace-nowrap lg:text-[66px] lg:tracking-[-3px]"
             >
               Developments Beyond Possibilities
-            </motion.h1>
+            </motion.h1>}
 
             {/* Subheading */}
-            <motion.p
+            {!minimal && <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" as const }}
               className="mt-2 w-full max-w-[900px] text-center font-[Georgia,serif] text-[40px] font-bold leading-none tracking-normal text-white/70 [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:text-[66px] lg:tracking-[-3.566px]"
             >
               Real estate & infrastructure
-            </motion.p>
+            </motion.p>}
 
             {/* CTA Button */}
-            <motion.a
-              href="#about"
+            {minimal && <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
               onMouseEnter={() => setIsCTAHovered(true)}
               onMouseLeave={() => setIsCTAHovered(false)}
               layout
+            >
+            <Link
+              href="/company-portfolio"
+              onClick={navigateToPortfolio}
               className={
-                "flex items-center gap-3 py-2 rounded-full bg-[#C7AA85] hover:bg-[#A88A63] mt-8 lg:mt-12 group cursor-pointer relative h-14 border border-white/20 transition-all duration-300 " +
-                (isCTAHovered ? "flex-row-reverse pl-2 pr-5" : "flex-row pl-5 pr-2")
+                "flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 rounded-full bg-[#C7AA85] hover:bg-[#A88A63] mt-8 lg:mt-12 group cursor-pointer relative h-12 sm:h-14 border border-white/20 transition-all duration-300 " +
+                (isCTAHovered ? "flex-row-reverse pl-1.5 pr-4 sm:pl-2 sm:pr-5" : "flex-row pl-4 pr-1.5 sm:pl-5 sm:pr-2")
               }
             >
               <motion.span
                 layout
-                className="font-inter text-base lg:text-[18px] font-medium leading-[28px] text-white"
+                className="font-inter text-sm sm:text-base lg:text-[18px] font-medium leading-5 sm:leading-[28px] text-white"
               >
                 Explore Our Portfolio
               </motion.span>
 
               <motion.div
                 layout
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center relative overflow-hidden shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center relative overflow-hidden shrink-0"
               >
                 <motion.div
                   animate={{
@@ -369,26 +384,22 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   <ArrowUpRight className="w-4 h-4 text-[#042718]" />
                 </motion.div>
               </motion.div>
-            </motion.a>
+            </Link>
+            </motion.div>}
 
             {/* Bottom Branding Section */}
-            <motion.div
+            {!minimal && <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 1, ease: "easeOut" as const }}
               className="mt-14 lg:mt-[96px] flex flex-col items-center gap-8 w-full"
             >
-              <div className="px-[16px] py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/20">
-                <p className="font-inter text-sm lg:text-base font-medium leading-6 tracking-[-0.3px] text-white text-center">
-                  Built through collaboration across development, engineering, and investment
-                </p>
-              </div>
-
-              <div className="mt-4 flex w-full flex-col items-center gap-6">
-                <div className="flex items-center justify-center gap-3 sm:gap-5">
-                  <BrandWordmark
-                    arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[18px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-[22px] lg:text-[26px]"
-                    englishClassName="mt-0.5 font-[Georgia,serif] text-[18px] font-bold leading-none tracking-[0.02em] text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-[22px] lg:text-[26px]"
+              <div className="mt-4 flex w-full flex-col items-center gap-8">
+                <div className="relative -top-4 flex items-center justify-center gap-3 sm:gap-5">
+                  <img
+                    src="/black-sand-logo.png"
+                    alt="Black Sand"
+                    className="h-8 w-auto object-contain brightness-0 invert sm:h-10 lg:h-12"
                   />
                   <img
                     src="/future-builders-logo.png"
@@ -397,8 +408,15 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   />
                 </div>
 
+                <div className="max-w-full rounded-[28px] border border-white/20 bg-white/5 px-6 py-3 backdrop-blur-sm sm:rounded-full">
+                  <p className="text-center font-inter text-[13px] font-medium leading-5 tracking-[-0.2px] text-white lg:text-[15px]">
+                    <span className="font-semibold">Our Clients</span>{" "}
+                    Built through collaboration across development, engineering, and investment
+                  </p>
+                </div>
+
                 <div
-                  className="client-logo-mask relative mt-4 w-full overflow-hidden sm:mt-6"
+                  className="client-logo-mask relative w-full overflow-hidden"
                   aria-label="Future Builders clients"
                 >
                   <div className="flex w-max animate-logo-marquee py-1">
@@ -425,7 +443,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.div>}
           </div>
         </div>
       </motion.section>

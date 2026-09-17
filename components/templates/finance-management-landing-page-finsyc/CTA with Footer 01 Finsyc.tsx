@@ -313,22 +313,22 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
             </motion.div>
 
             {/* Tatweer brand lockup */}
-            <div className="flex min-h-[130px] w-full select-none items-center justify-center md:min-h-[250px] lg:min-h-[430px]">
+            <div className="flex min-h-[120px] w-full select-none items-center justify-center md:min-h-[150px] lg:min-h-[180px]">
               <motion.div
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: [0.21, 0.45, 0.32, 0.9] as const }}
-                className="flex w-full items-center justify-center gap-2 px-1 sm:gap-3 md:gap-6 lg:gap-10"
+                className="flex w-full items-center justify-center gap-3 px-1 sm:gap-5 lg:gap-6"
               >
+                <BrandWordmark
+                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[54px] font-bold leading-none text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.4)] sm:text-[72px] lg:text-[112px]"
+                  englishClassName="mt-1 font-[Georgia,serif] text-[54px] font-bold leading-none tracking-[0.02em] text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.4)] sm:text-[72px] lg:text-[112px]"
+                />
                 <img
                   src="/logo-new.png"
                   alt=""
-                  className="h-[clamp(44px,13vw,58px)] w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)] md:h-[118px] lg:h-[190px]"
-                />
-                <BrandWordmark
-                  arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[clamp(40px,13vw,52px)] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:text-[112px] lg:text-[188px]"
-                  englishClassName="mt-2 font-[Georgia,serif] text-[clamp(40px,13vw,52px)] font-bold leading-none tracking-[0.01em] text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:mt-3 md:text-[112px] md:tracking-[0.02em] lg:mt-4 lg:text-[188px]"
+                  className="h-20 w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)] sm:h-24 lg:h-36"
                 />
               </motion.div>
             </div>
