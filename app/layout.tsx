@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: [{ url: "/logo-new.png", type: "image/png" }],
+    shortcut: "/logo-new.png",
+    apple: "/logo-new.png",
   },
   openGraph: {
     type: "website",

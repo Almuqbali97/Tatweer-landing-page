@@ -25,7 +25,7 @@ function CTAButton({ text, href, variant = 'primary' }: CTAButtonProps) {
       className={cn(
         "relative flex items-center h-[56px] rounded-full transition-all duration-500 overflow-hidden gap-3",
         isPrimary
-          ? "bg-[#A94432] hover:bg-[#923A2B] text-white shadow-[0_8px_32px_rgba(169,68,50,0.20)]"
+          ? "bg-[#C7AA85] hover:bg-[#A88A63] text-white shadow-[0_8px_32px_rgba(199,170,133,0.28)]"
           : "bg-white/20 backdrop-blur-xl border border-white/60 text-[#042718] w-full sm:w-[276px] justify-between shadow-[0_8px_32px_rgba(255,255,255,0.1)]",
         isHovered ? "pl-[8px] pr-[20px] flex-row-reverse" : "pl-[20px] pr-[8px] flex-row"
       )}
@@ -43,7 +43,7 @@ function CTAButton({ text, href, variant = 'primary' }: CTAButtonProps) {
         transition={{ type: "spring" as const, stiffness: 400, damping: 30 }}
         className={cn(
           "flex items-center justify-center w-10 h-10 rounded-full shrink-0 z-20",
-          isPrimary ? "bg-white" : "bg-[#A94432]"
+          isPrimary ? "bg-white" : "bg-[#C7AA85]"
         )}
       >
         <ArrowUpRight className={cn("w-4 h-4", isPrimary ? "text-[#042718]" : "text-white")} />
@@ -100,7 +100,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
               className="w-full h-full object-cover"
             >
               <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260728_222614_efaa8e5e-821a-4741-8719-4c08a527600f.mp4"
+                src="/tatweer-main-video.mp4"
                 type="video/mp4"
               />
             </video>
@@ -125,10 +125,10 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#CF573F]/10 border border-[#CF573F]/10 mb-[30px]"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#C7AA85]/10 border border-[#C7AA85]/20 mb-[30px]"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#CF573F]" />
-                <span className="text-[#CF573F] text-[13px] font-sans font-medium uppercase tracking-wider">Partnerships</span>
+                <Sparkles className="w-3.5 h-3.5 text-[#C7AA85]" />
+                <span className="text-[#C7AA85] text-[13px] font-sans font-medium uppercase tracking-wider">Partnerships</span>
               </motion.div>
 
               {/* Heading */}
@@ -215,7 +215,7 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                   className="group flex items-start gap-3 rounded-[22px] border border-white/35 bg-[#02170e]/30 p-4 text-white backdrop-blur-xl transition-colors hover:bg-[#02170e]/45"
                   aria-label="Open Future Builders office location in Google Maps"
                 >
-                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#A94432]">
+                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C7AA85]">
                     <MapPin className="h-5 w-5" />
                   </span>
                   <span className="font-sans text-[15px] leading-6 text-white/85">
@@ -322,9 +322,9 @@ export default function CtaWithFooter01Finsyc({ className }: { className?: strin
                 className="flex w-full items-center justify-center gap-2 px-1 sm:gap-3 md:gap-6 lg:gap-10"
               >
                 <img
-                  src="/logo.png"
+                  src="/logo-new.png"
                   alt=""
-                  className="h-[clamp(44px,13vw,58px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:h-[118px] lg:h-[190px]"
+                  className="h-[clamp(44px,13vw,58px)] w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)] md:h-[118px] lg:h-[190px]"
                 />
                 <BrandWordmark
                   arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[clamp(40px,13vw,52px)] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_8px_rgba(0,0,0,0.35)] md:text-[112px] lg:text-[188px]"

@@ -37,15 +37,15 @@ const plans: PricingPlan[] = [
     ],
   },
   {
-    name: "Integrated Delivery",
-    description: "Bring engineering, infrastructure, commissioning, and operations together.",
+    name: "Advisory Services",
+    description: "Shape clear, investable, and sustainable decisions from first idea to execution.",
     index: "03",
     features: [
-      "Multidisciplinary engineering",
-      "Design-and-build support",
-      "Testing and commissioning",
-      "Asset management planning",
-      "Partner-led delivery",
+      "Market and feasibility studies",
+      "Development and investment strategy",
+      "Financial and legal structuring",
+      "Masterplanning and concept definition",
+      "Due diligence and decision support",
     ],
   },
 ];
@@ -94,7 +94,7 @@ function PricingCard({
               suppressHydrationWarning
             >
               <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260728_220144_6964d811-e0df-4c32-8171-2e83eb6f5f3d.mp4"
+                src="/tatweer-main-video.mp4"
                 type="video/mp4"
               />
             </video>
@@ -134,7 +134,7 @@ function PricingCard({
           }}
           onMouseEnter={() => setIsBtnHovered(true)}
           onMouseLeave={() => setIsBtnHovered(false)}
-          className={"mt-[24px] flex items-center justify-between self-stretch rounded-full border transition-all duration-500 relative overflow-hidden " + (isBtnHovered || isVisualActive ? "bg-[#A94432] border-[#A94432] text-white" : "bg-white border-[#042718]/10 text-[#042718]") + " " + (isBtnHovered ? "p-[8px_20px_8px_8px] flex-row-reverse" : "p-[8px_8px_8px_20px] flex-row")}
+          className={"mt-[24px] flex items-center justify-between self-stretch rounded-full border transition-all duration-500 relative overflow-hidden " + (isBtnHovered || isVisualActive ? "bg-[#C7AA85] border-[#C7AA85] text-white" : "bg-white border-[#042718]/10 text-[#042718]") + " " + (isBtnHovered ? "p-[8px_20px_8px_8px] flex-row-reverse" : "p-[8px_8px_8px_20px] flex-row")}
         >
           <motion.span
             layout
@@ -144,7 +144,7 @@ function PricingCard({
           </motion.span>
           <motion.div
             layout
-            className={"flex items-center justify-center w-10 h-10 rounded-full transition-all duration-500 z-10 " + (isBtnHovered || isVisualActive ? "bg-white" : "bg-[#A94432]")}
+            className={"flex items-center justify-center w-10 h-10 rounded-full transition-all duration-500 z-10 " + (isBtnHovered || isVisualActive ? "bg-white" : "bg-[#C7AA85]")}
           >
             <ArrowUpRight
               size={18}
@@ -170,7 +170,7 @@ function PricingCard({
                   <Check
                     size={14}
                     strokeWidth={3.5}
-                    className={isVisualActive ? "text-[#042718]" : "text-[#CF573F]"}
+            className={isVisualActive ? "text-[#042718]" : "text-[#C7AA85]"}
                   />
                 </div>
                 <span
@@ -214,10 +214,10 @@ export default function Pricing01Finsyc({ className }: { className?: string }) {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#CF573F]/10 border border-[#CF573F]/10"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C7AA85]/10 border border-[#C7AA85]/20"
           >
-            <Sparkles size={14} strokeWidth={3} className="text-[#CF573F]" />
-            <span className="font-inter text-sm font-medium text-[#CF573F]">Engagement Models</span>
+            <Sparkles size={14} strokeWidth={3} className="text-[#C7AA85]" />
+            <span className="font-inter text-sm font-medium text-[#C7AA85]">Engagement Models</span>
           </motion.div>
 
           <motion.h2

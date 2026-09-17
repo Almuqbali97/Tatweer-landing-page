@@ -93,7 +93,7 @@ export default function GlobalPresence01Finsyc({
     >
       <div
         aria-hidden="true"
-        className="absolute -right-40 top-12 h-[440px] w-[440px] rounded-full bg-[#CF573F]/[0.06] blur-3xl"
+        className="absolute -right-40 top-12 h-[440px] w-[440px] rounded-full bg-[#C7AA85]/[0.10] blur-3xl"
       />
       <div
         aria-hidden="true"
@@ -110,9 +110,9 @@ export default function GlobalPresence01Finsyc({
               transition={{ duration: 0.7 }}
               className="flex flex-col items-start"
             >
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#CF573F]/15 bg-[#CF573F]/[0.06] px-4 py-2">
-                <Sparkles className="h-4 w-4 fill-[#CF573F] text-[#CF573F]" />
-                <span className="font-inter text-sm font-medium text-[#CF573F]">
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#C7AA85]/25 bg-[#C7AA85]/[0.10] px-4 py-2">
+                <Sparkles className="h-4 w-4 fill-[#C7AA85] text-[#C7AA85]" />
+                <span className="font-inter text-sm font-medium text-[#C7AA85]">
                   Global Presence
                 </span>
               </div>
@@ -120,7 +120,7 @@ export default function GlobalPresence01Finsyc({
               <h2 className="max-w-[520px] font-onest text-[36px] font-semibold leading-[1.08] tracking-[-1.5px] text-[#042718] sm:text-[48px] lg:text-[58px] lg:tracking-[-2.2px]">
                 Local insight with a{" "}
                 <span className="font-playfair italic text-black/40">
-                  global perspective
+                  global partnership
                 </span>
               </h2>
 
@@ -131,7 +131,7 @@ export default function GlobalPresence01Finsyc({
               </p>
 
               <div className="mt-9 flex items-start gap-4 rounded-[22px] border border-[#042718]/10 bg-white/70 p-5 backdrop-blur-sm">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#A94432] text-white">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#C7AA85] text-white">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -196,7 +196,7 @@ export default function GlobalPresence01Finsyc({
                 ))}
 
                 <div className="absolute left-[5%] top-[7%] flex items-center gap-2 rounded-full border border-[#042718]/10 bg-white/95 px-3 py-2 shadow-sm">
-                  <Globe2 className="h-4 w-4 text-[#CF573F]" />
+                  <Globe2 className="h-4 w-4 text-[#C7AA85]" />
                   <span className="font-inter text-[10px] font-semibold uppercase tracking-[0.1em] text-[#042718] sm:text-xs">
                     Connected markets
                   </span>

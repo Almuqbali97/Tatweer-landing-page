@@ -91,7 +91,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
             />
             <div
               aria-hidden="true"
-              className="absolute -bottom-[30vw] -right-[20vw] h-[70vw] w-[70vw] rounded-full bg-[#CF573F]/15 blur-[140px]"
+              className="absolute -bottom-[30vw] -right-[20vw] h-[70vw] w-[70vw] rounded-full bg-[#C7AA85]/20 blur-[140px]"
             />
 
             <motion.div
@@ -104,9 +104,9 @@ export default function FinsycOriginalHeader({ className }: { className?: string
             >
               <div className="flex items-center justify-center gap-4 sm:gap-5">
                 <img
-                  src="/logo.png"
+                  src="/logo-new.png"
                   alt=""
-                  className="h-14 w-auto drop-shadow-[0_3px_14px_rgba(0,0,0,0.25)] sm:h-[72px]"
+                  className="h-14 w-auto drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:h-[72px]"
                 />
                 <BrandWordmark
                   arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[34px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[48px]"
@@ -158,7 +158,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               className="w-full h-full object-cover"
             >
               <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260912_212147_dd3d2589-edc4-4446-97e5-d1e97bbbe925.mp4"
+                src="/tatweer-main-video.mp4"
                 type="video/mp4"
               />
             </video>
@@ -176,9 +176,9 @@ export default function FinsycOriginalHeader({ className }: { className?: string
           >
             <a href="/" aria-label="Tatweer home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img
-                src="/logo.png"
+                src="/logo-new.png"
                 alt=""
-                className="h-10 lg:h-11 w-auto"
+                className="h-10 lg:h-11 w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.7)]"
               />
               <BrandWordmark
                 arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[22px] font-bold leading-none text-[#F4E7D4] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] lg:text-[26px]"
@@ -263,9 +263,9 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 <div className="flex items-center justify-between">
                   <a href="/" aria-label="Tatweer home" className="flex items-center gap-3">
                     <img
-                      src="/logo.png"
+                      src="/logo-new.png"
                       alt=""
-                      className="h-11 w-auto"
+                      className="h-11 w-auto drop-shadow-[0_4px_14px_rgba(0,0,0,0.7)]"
                     />
                     <BrandWordmark
                       arabicClassName="font-[Georgia,'Noto Naskh Arabic','Traditional Arabic',serif] text-[25px] font-bold leading-none text-[#4B3028]"
@@ -303,7 +303,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                   <a
                     href="#partnerships"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full rounded-full bg-[#A94432] py-4 text-center font-inter text-lg font-medium text-white transition-colors hover:bg-[#923A2B]"
+                    className="block w-full rounded-full bg-[#C7AA85] py-4 text-center font-inter text-lg font-medium text-white transition-colors hover:bg-[#A88A63]"
                   >
                     Partner With Us
                   </a>
@@ -314,24 +314,6 @@ export default function FinsycOriginalHeader({ className }: { className?: string
 
           {/* Hero Content */}
           <div className="flex flex-col items-center mt-12 lg:mt-[80px]">
-            {/* Rating Box */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" as const }}
-              className="flex flex-row items-center gap-1.5 sm:gap-2 px-3 sm:px-[14px] py-1.5 rounded-full bg-black/25 backdrop-blur-md border border-white/45 mb-6 whitespace-nowrap"
-            >
-              <div className="flex items-center gap-1 shrink-0">
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white text-white" />
-                <span className="font-inter text-sm sm:text-base lg:text-[18px] font-medium leading-[28px] text-white">
-                  2026 profile
-                </span>
-              </div>
-              <span className="font-inter text-sm sm:text-base lg:text-[18px] font-normal leading-[28px] text-white/75 shrink-0">
-                partnership & collaboration
-              </span>
-            </motion.div>
-
             {/* Heading */}
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
@@ -347,7 +329,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" as const }}
-              className="mt-2 w-full max-w-[900px] text-center font-playfair text-[40px] font-semibold italic leading-none tracking-normal text-white/70 [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:text-[66px] lg:tracking-[-3.566px]"
+              className="mt-2 w-full max-w-[900px] text-center font-[Georgia,serif] text-[40px] font-bold leading-none tracking-normal text-white/70 [text-shadow:0_3px_24px_rgba(0,0,0,0.55)] sm:text-[56px] lg:text-[66px] lg:tracking-[-3.566px]"
             >
               Real estate & infrastructure
             </motion.p>
@@ -362,7 +344,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
               onMouseLeave={() => setIsCTAHovered(false)}
               layout
               className={
-                "flex items-center gap-3 py-2 rounded-full bg-[#A94432] hover:bg-[#923A2B] mt-8 lg:mt-12 group cursor-pointer relative h-14 border border-white/20 transition-all duration-300 " +
+                "flex items-center gap-3 py-2 rounded-full bg-[#C7AA85] hover:bg-[#A88A63] mt-8 lg:mt-12 group cursor-pointer relative h-14 border border-white/20 transition-all duration-300 " +
                 (isCTAHovered ? "flex-row-reverse pl-2 pr-5" : "flex-row pl-5 pr-2")
               }
             >
@@ -416,7 +398,7 @@ export default function FinsycOriginalHeader({ className }: { className?: string
                 </div>
 
                 <div
-                  className="client-logo-mask relative w-full overflow-hidden"
+                  className="client-logo-mask relative mt-4 w-full overflow-hidden sm:mt-6"
                   aria-label="Future Builders clients"
                 >
                   <div className="flex w-max animate-logo-marquee py-1">

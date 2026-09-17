@@ -83,7 +83,7 @@ export default function MetricsWithLogo01Finsyc({ className }: { className?: str
                   x: { duration: 0.8 },
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center h-[56px] min-w-fit w-max bg-[#A94432] rounded-full group cursor-pointer transition-colors duration-300 hover:bg-[#923A2B] overflow-hidden gap-[12px]"
+                className="flex items-center h-[56px] min-w-fit w-max bg-[#C7AA85] rounded-full group cursor-pointer transition-colors duration-300 hover:bg-[#A88A63] overflow-hidden gap-[12px]"
               >
                 <motion.div
                   layout="position" 

@@ -106,13 +106,13 @@ export default function FinsycOriginal4step({ className }: { className?: string 
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#CF573F]/10 bg-[#CF573F]/5 whitespace-nowrap mb-6"
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C7AA85]/20 bg-[#C7AA85]/10 whitespace-nowrap mb-6"
             >
               <Sparkles
-                className="w-4 h-4 text-[#CF573F]"
+                className="w-4 h-4 text-[#C7AA85]"
                 strokeWidth={2.5}
               />
-              <span className="text-[#CF573F] text-center font-inter text-base font-medium leading-6 tracking-[-0.3px]">
+              <span className="text-[#C7AA85] text-center font-inter text-base font-medium leading-6 tracking-[-0.3px]">
                 Comprehensive Services
               </span>
             </motion.div>
@@ -151,8 +151,8 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                       className={cn(
                         "flex items-center gap-3 px-4 sm:px-6 py-2.5 rounded-xl transition-all duration-300 shrink-0 snap-start",
                         isActive
-                          ? "bg-[#E86F56] shadow-[0_6px_18px_rgba(232,111,86,0.22)]"
-                          : "hover:bg-[#E86F56]/10",
+                          ? "bg-[#C7AA85] shadow-[0_6px_18px_rgba(199,170,133,0.28)]"
+                          : "hover:bg-[#C7AA85]/10",
                       )}
                     >
                       <group.icon
@@ -188,10 +188,10 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
-                    className="w-16 h-16 rounded-xl border border-[#CF573F]/15 bg-[#CF573F]/5 shadow-sm flex items-center justify-center p-4 mb-3"
+                    className="w-16 h-16 rounded-xl border border-[#C7AA85]/25 bg-[#C7AA85]/10 shadow-sm flex items-center justify-center p-4 mb-3"
                   >
                     <activeGroup.icon
-                      className="w-8 h-8 text-[#CF573F]"
+                      className="w-8 h-8 text-[#C7AA85]"
                       strokeWidth={2.5}
                     />
                   </motion.div>
@@ -228,8 +228,8 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                         }}
                         className="flex items-center gap-3"
                       >
-                        <div className="w-5 h-5 rounded-full bg-[#CF573F]/10 flex items-center justify-center shrink-0">
-                          <Check className="w-3 h-3 text-[#CF573F] stroke-[3px]" />
+                        <div className="w-5 h-5 rounded-full bg-[#C7AA85]/10 flex items-center justify-center shrink-0">
+                          <Check className="w-3 h-3 text-[#C7AA85] stroke-[3px]" />
                         </div>
                         <span className="text-[#042718] font-inter text-base font-medium leading-6 tracking-[-0.3px]">
                           {item}
@@ -244,7 +244,7 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                     onMouseLeave={() => setIsHoveringBtn(false)}
                     layout
                     className={cn(
-                      "flex items-center gap-3 py-2 rounded-full bg-[#E86F56] hover:bg-[#CF573F] shadow-[0_8px_24px_rgba(232,111,86,0.24)] group cursor-pointer relative h-14 transition-all duration-300",
+                      "flex items-center gap-3 py-2 rounded-full bg-[#C7AA85] hover:bg-[#A88A63] shadow-[0_8px_24px_rgba(199,170,133,0.28)] group cursor-pointer relative h-14 transition-all duration-300",
                       isHoveringBtn
                         ? "flex-row-reverse pl-2 pr-5"
                         : "flex-row pl-5 pr-2",
@@ -270,7 +270,7 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                           delay: isHoveringBtn ? 0.1 : 0,
                         }}
                       >
-                        <ArrowUpRight className="w-4 h-4 text-[#CF573F]" />
+                        <ArrowUpRight className="w-4 h-4 text-[#C7AA85]" />
                       </motion.div>
                     </motion.div>
                   </motion.a>
@@ -286,7 +286,7 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                       className="absolute inset-0 w-full h-full object-cover"
                     >
                       <source
-                        src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260728_220144_6964d811-e0df-4c32-8171-2e83eb6f5f3d.mp4"
+                        src="/tatweer-main-video.mp4"
                         type="video/mp4"
                       />
                     </video>
@@ -303,7 +303,7 @@ export default function FinsycOriginal4step({ className }: { className?: string 
                       className="absolute left-6 right-6 bottom-6 lg:left-8 lg:right-8 lg:bottom-8 rounded-2xl border border-white/20 bg-white/10 p-5 lg:p-6 backdrop-blur-md"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-[#E86F56] flex items-center justify-center shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-[#C7AA85] flex items-center justify-center shrink-0">
                           <activeGroup.icon
                             className="w-6 h-6 text-white"
                             strokeWidth={2.4}

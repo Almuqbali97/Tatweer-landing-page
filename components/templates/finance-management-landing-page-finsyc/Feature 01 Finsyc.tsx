@@ -84,7 +84,7 @@ function ExpandingProjectCard({
         flexGrow: isActive ? 4.6 : 1,
         transitionDuration: reduceMotion ? "0ms" : "750ms",
       }}
-      className="group relative h-[590px] min-w-0 basis-0 cursor-pointer overflow-hidden rounded-[28px] border border-white/45 bg-[#0a241a] text-left shadow-[0_18px_55px_rgba(2,23,14,0.13)] outline-none ring-[#CF573F] ring-offset-4 ring-offset-white transition-[flex-grow,filter] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[flex-grow] focus-visible:ring-2"
+      className="group relative h-[590px] min-w-0 basis-0 cursor-pointer overflow-hidden rounded-[28px] border border-white/45 bg-[#0a241a] text-left shadow-[0_18px_55px_rgba(2,23,14,0.13)] outline-none ring-[#C7AA85] ring-offset-4 ring-offset-white transition-[flex-grow,filter] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[flex-grow] focus-visible:ring-2"
     >
       <img
         src={project.uiSrc}
@@ -156,15 +156,6 @@ export default function OriginaFinsycFeature({
   const [activeProject, setActiveProject] = useState(0);
 
   const projects: Project[] = [
-    {
-      title: "Al Daymaniyat Island Qisma",
-      description:
-        "A mixed-use island development shaped by the ambition to create responsibly within a UNESCO-protected setting.",
-      location: "Oman",
-      category: "Island development",
-      status: "Flagship project",
-      uiSrc: "/portfolio/al-daymaniyat-island-qisma.png",
-    },
     {
       title: "18 November",
       description:
@@ -249,10 +240,10 @@ export default function OriginaFinsycFeature({
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex items-center gap-2 whitespace-nowrap rounded-full border border-[#CF573F]/10 bg-[#CF573F]/5 px-4 py-1.5"
+                className="flex items-center gap-2 whitespace-nowrap rounded-full border border-[#C7AA85]/20 bg-[#C7AA85]/10 px-4 py-1.5"
               >
-                <Sparkles className="h-4 w-4 text-[#CF573F]" />
-                <span className="text-center font-inter text-base font-normal leading-6 tracking-[-0.3px] text-[#CF573F]">
+                <Sparkles className="h-4 w-4 text-[#C7AA85]" />
+                <span className="text-center font-inter text-base font-normal leading-6 tracking-[-0.3px] text-[#C7AA85]">
                   Selected Portfolio
                 </span>
               </motion.div>
@@ -277,8 +268,7 @@ export default function OriginaFinsycFeature({
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mt-3 w-full max-w-[560px] text-center font-inter text-base font-normal leading-relaxed text-[#042718] opacity-80 sm:text-lg sm:leading-7"
               >
-                Al Daymaniyat Island Qisma and a first look at six destinations
-                coming next.
+                A first look at six destinations coming next.
               </motion.p>
             </div>
 

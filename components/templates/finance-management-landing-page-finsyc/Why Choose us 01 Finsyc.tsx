@@ -23,7 +23,7 @@ function BenefitItem({ title, description, icon: Icon, delay = 0 }: BenefitItemP
       className="flex gap-6"
     >
       <div className="flex-shrink-0 w-10 h-10 bg-[#f9fafb] border border-[#F8F8FC] rounded-lg flex items-center justify-center">
-        <Icon className="w-5 h-5 text-[#CF573F]" strokeWidth={2.5} />
+        <Icon className="w-5 h-5 text-[#C7AA85]" strokeWidth={2.5} />
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-[#042718] font-onest text-[20px] md:text-[24px] font-semibold leading-[26px] md:leading-[30px] tracking-[-0.6px] md:tracking-[-0.8px]">
@@ -141,10 +141,10 @@ export default function WhyChooseUs01Finsyc({ className }: { className?: string 
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="px-4 py-2 bg-[#CF573F]/[0.06] border border-[#CF573F]/15 rounded-full flex items-center gap-2 mb-8"
+                  className="px-4 py-2 bg-[#C7AA85]/[0.10] border border-[#C7AA85]/25 rounded-full flex items-center gap-2 mb-8"
                 >
-                  <Sparkles className="w-4 h-4 text-[#CF573F] fill-[#CF573F]" />
-                  <span className="text-[#CF573F] font-sans text-sm font-medium">Why Tatweer</span>
+                  <Sparkles className="w-4 h-4 text-[#C7AA85] fill-[#C7AA85]" />
+                  <span className="text-[#C7AA85] font-sans text-sm font-medium">Why Tatweer</span>
                 </motion.div>
 
                 <motion.h2
@@ -188,10 +188,10 @@ export default function WhyChooseUs01Finsyc({ className }: { className?: string 
                 <div className="lg:sticky lg:top-[120px] lg:h-[800px] h-auto flex items-start w-full lg:overflow-hidden overflow-visible">
                   <div className="hidden lg:block absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white via-white/95 to-transparent z-10 pointer-events-none" />
 
-                  <div className="hidden lg:flex flex-col items-center mr-10 xl:mr-12 relative w-[2px] bg-[#CF573F]/10 self-stretch">
+                  <div className="hidden lg:flex flex-col items-center mr-10 xl:mr-12 relative w-[2px] bg-[#C7AA85]/20 self-stretch">
                     <motion.div
                       style={{ scaleY, originY: 0 }}
-                      className="w-full bg-[#CF573F] absolute top-0 left-0 h-full"
+                      className="w-full bg-[#C7AA85] absolute top-0 left-0 h-full"
                     />
                   </div>
 

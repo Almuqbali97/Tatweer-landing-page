@@ -159,9 +159,9 @@ export default function MetricAndTestimonials({ className }: { className?: strin
           <div className="w-full max-w-[1440px] flex flex-col items-center overflow-hidden">
 
             <div className="w-full max-w-[1248px] px-6 lg:px-0 flex flex-col items-center text-center mt-0 mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#CF573F]/[0.05] border border-[#CF573F]/10 mb-4">
-                <Star className="w-3.5 h-3.5 text-[#CF573F] fill-[#CF573F]" />
-                <span className="text-[14px] font-medium text-[#CF573F] tracking-tight">Selected Portfolio</span>
+              <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#C7AA85]/[0.08] border border-[#C7AA85]/20 mb-4">
+                <Star className="w-3.5 h-3.5 text-[#C7AA85] fill-[#C7AA85]" />
+                <span className="text-[14px] font-medium text-[#C7AA85] tracking-tight">Selected Portfolio</span>
               </div>
 
               <h2 className="text-[#042718] text-[28px] sm:text-[36px] md:text-[52px] font-semibold leading-tight tracking-tight max-w-[690px] mb-4 lg:mb-6">
@@ -206,7 +206,7 @@ export default function MetricAndTestimonials({ className }: { className?: strin
                               className="w-full h-full object-cover"
                             >
                               <source
-                                src="https://d8j0ntlcm91z4.cloudfront.net/user_3H8ze3swGqehMVleCUDX2hFhcKm/hf_20260728_220144_6964d811-e0df-4c32-8171-2e83eb6f5f3d.mp4"
+                                src="/tatweer-main-video.mp4"
                                 type="video/mp4"
                               />
                             </video>
@@ -276,7 +276,7 @@ export default function MetricAndTestimonials({ className }: { className?: strin
               </button>
               <button
                 onClick={() => handleNext()}
-                className="w-[48px] h-[48px] md:w-[60px] md:h-[60px] rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer bg-[#A94432] hover:bg-[#923A2B] shadow-lg"
+                className="w-[48px] h-[48px] md:w-[60px] md:h-[60px] rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer bg-[#C7AA85] hover:bg-[#A88A63] shadow-lg"
               >
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </button>
